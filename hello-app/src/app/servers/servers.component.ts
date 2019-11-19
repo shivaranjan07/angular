@@ -10,7 +10,7 @@ export class ServersComponent implements OnInit {
   serverName = 'test';
   serverCreated = false;
   serverCreation = 'no server was created';
-  machines = ['test', 'test2'];
+  public machines = ['test', 'test2'];
   constructor() {
     setTimeout(() => {
       this.allowAddServer = true;
@@ -23,5 +23,8 @@ export class ServersComponent implements OnInit {
     this.serverCreated = true;
     this.machines.push(this.serverName);
     this.serverCreation = 'server is created' + this.serverName;
+  }
+  displayData() {
+    this.machines.forEach((x) => console.log(x));
   }
 }
