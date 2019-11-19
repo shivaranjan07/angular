@@ -10,7 +10,7 @@ export class ServersComponent implements OnInit {
   serverName = 'test';
   serverCreated = false;
   serverCreation = 'no server was created';
-  machines = ['test', 'test2'];
+  public machines = ['test', 'test2'];
   constructor() {
     setTimeout(() => {
       this.allowAddServer = true;
@@ -26,5 +26,8 @@ export class ServersComponent implements OnInit {
   }
   onUpdateServerName( event: Event ) {
     this.serverName = (event.target as HTMLInputElement).value;
+  }
+  displayData() {
+    this.machines.forEach((x) => console.log(x));
   }
 }
