@@ -20,9 +20,12 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
   onServerCreation() {
+    this.serverCreation = 'server is created ' + this.serverName;
     this.serverCreated = true;
     this.machines.push(this.serverName);
-    this.serverCreation = 'server is created' + this.serverName;
+  }
+  onUpdateServerName( event: Event ) {
+    this.serverName = (event.target as HTMLInputElement).value;
   }
   displayData() {
     this.machines.forEach((x) => console.log(x));
